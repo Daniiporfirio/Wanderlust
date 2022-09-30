@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("_head") %>
+</head>
+
+<body>
+  <%- include("_header") %>
+
+    <div class="container">
+      <!-- Página Inicial -->
+      <% if (role==="index" ) { %>
+        <h1>Países</h1>
+        <a href="/edit-countries/" class="btn btn-outline-primary" style="float: right">Editar Países</a>
+        <section id="countries">
+          <div class="row">
+            <% countries.forEach(country=> { %>
+              <div class="col-3">
+                <a href="/country/<%= country.IDCountry %>/cities">
+                  <div class="card">
+                    <img src="/images/<%= country.image %>" height="200" width="200" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <div class="card-title">
+                        <%= country.name %>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <% }); %>
+          </div>
+        </section>
+        <%} %>
+
+          <!-- Editar Países -->
+          <% if (role==="edit-countries" ) { %>
+            <h1>Editar - Países</h1>
+            <a href="/add-country/" class="btn btn-outline-primary" style="float: right">Adicionar País</a>
+            <section id="countries">
+              <div class="row">
+                <% countries.forEach(country=> { %>
+                  <div class="col-3">
+                    <div class="card">
+                      <img src="/images/<%= country.image %>" height="200" width="200" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <div class="card-title">
+                          <%= country.name %>
+                        </div>
+
+                        <div class="row">
+
+                          <div class="col-6">
+                            <a href="/edit-country/<%= country.IDCountry %>" class="btn btn-outline-primary"
+                              style="float: left">
+                              Editar
+                            </a>
+                          </div>
+
+                          <div class="col-6">
+                            <a href="/delete-country/<%= country.IDCountry %>" class="btn btn-outline-danger"
+                              style="float: right">
+                              Excluir
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% }); %>
+              </div>
+            </section>
+            <% }; %>
+
+              <!-- Todas as cidades -->
+              <% if (role==="cities" ) { %>
+                <h1>Cidades</h1>
+                <a href="/edit-cities/" class="btn btn-outline-primary" style="float: right">Editar Cidades</a>
+                <section id="cities">
+                  <div class="row">
+                    <% cities.forEach(city=> { %>
+                      <div class="col-3">
+                        <a href="/city/<%= city.IDCity %>">
+                          <div class="card">
+                            <img src="/images/<%= city.image %>" height="200" width="200" class="card-img-top"
+                              alt="..." />
+                            <div class="card-body">
+                              <div class="card-title">
+                                <%= city.name %>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <% }); %>
+                  </div>
+                </section>
+                <%} %>
+
+
+                  <!-- Editar as cidades -->
+                  <% if (role==="edit-cities" ) { %>
+                    <h1>Cidades</h1>
+                    <a href="/add-city/" class="btn btn-outline-primary" style="float: right">Adicionar Cidade</a>
+
+                    <section id="cities">
+                      <div class="row">
+                        <% cities.forEach(city=> { %>
+                          <div class="col-3">
+                            <div class="card">
+                              <img src="/images/<%= city.image %>" height="200" width="200" class="card-img-top"
+                                alt="..." />
+                              <div class="card-body">
+                                <div class="card-title">
+                                  <%= city.name %>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-6">
+                                    <a href="/edit-city/<%= city.IDCity %>" class="btn btn-outline-primary"
+                                      style="float: left">
+                                      Editar
+                                    </a>
+                                  </div>
+
+                                  <div class="col-6">
+                                    <a href="/delete-city/<%= city.IDCity %>" class="btn btn-outline-danger"
+                                      style="float: right">
+                                      Excluir
+                                    </a>
+                                  </div>
+
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">
+                                    Deseja mesmo excluir a cidade?
+                                  </h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">Esta é uma ação irreversível.</div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Cancelar
+                                  </button>
+                                  <a href="/delete-city/<%= city.IDCity %>" class="btn btn-outline-danger">Excluir</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <% }); %>
+                      </div>
+                    </section>
+    </div>
+    <% }; %>
+      </div>
+</body>
+
+<footer class="footer">
+  <%- include("_footer") %>
+</footer>
+
+</html>

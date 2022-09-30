@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+.logo {
+  height: 40px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: #ff00bfde;
+  text-decoration: none;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.section-cities,
+.section-countries {
+  padding-top: 32px;
+}
+
+.footer {
+  background-color: #ff00bfde;
+  width: 100%;
+  position: absolute;
+  bottom: -1;
+}
+
+.footer p {
+  color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("_head") %>
+</head>
+
+<body>
+  <%- include("_header") %>
+
+    <div class="container">
+      <!-- FORMULÁRIO HTML -->
+      <form action="/save-city" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" class="form-control" name="name" aria-describedby="nome da cidade" required />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Imagem</label>
+          <input type="file" multiple="true" class="form-control" name="image" aria-describedby="imagem da cidade"
+            accept="image/*" required />
+        </div>
+        <div class="mb-3">
+          <label for="IDCountry" class="form-label">País</label>
+          <select class="form-select" name="IDCountry" aria-label="Selecione o País da cidade">
+            <option selected>- Selecione o País</option>
+            <% countries.forEach(country=> { %>
+              <option value="<%= country.IDCountry %>">
+                <%= country.name %>
+              </option>
+              <% }) %>
+          </select>
+          <a href="/add-country">Caso não encontre o país na lista, clique aqui </a>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+</body>
+
+</html>

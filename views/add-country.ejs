@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("_head") %>
+  </head>
+  <body>
+    <%- include("_header") %>
+
+    <div class="container">
+      <!-- FORMULÁRIO HTML -->
+      <form action="/save-country" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name" class="form-label">País</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            aria-describedby="nome do país"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Imagem</label>
+          <input
+            type="file"
+            multiple="true"
+            class="form-control"
+            name="image"
+            aria-describedby="imagem do país"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </body>
+</html>

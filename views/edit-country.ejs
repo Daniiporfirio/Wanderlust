@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("_head") %>
+</head>
+
+<body>
+  <%- include("_header") %>
+
+    <div class="container">
+      <!-- FORMULÁRIO HTML -->
+      <form action="/update-country/ <%= country.IDCountry %>" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">País</label>
+          <input type="text" class="form-control" name="name" aria-describedby="nome do país"
+            value="<%= country.name %>" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+
+      </form>
+    </div>
+</body>
+
+</html>

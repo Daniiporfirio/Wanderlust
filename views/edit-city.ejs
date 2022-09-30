@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("_head") %>
+</head>
+
+<body>
+  <%- include("_header") %>
+
+    <div class="container">
+      <!-- FORMULÁRIO HTML -->
+      <form action="/update-city/<%= city.IDCity %>" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Cidade</label>
+          <input type="text" class="form-control" name="name" aria-describedby="nome da cidade" value="<%= city.name %>"
+            required />
+        </div>
+
+        <div class="mb-3">
+          <label for="IDCountry" class="form-label">País</label>
+          <select class="form-select" name="IDCountry" aria-label="Selecionar o país da cidade">
+            <option>- Selecione o país</option>
+            <% countries.forEach(country=> { %>
+              <option value="<%= country.IDCountry %>" <%=country.IDCountry===city.IDCountry ? "selected" : "" %>>
+                <%= country.name %>
+              </option>
+              <% }) %>
+          </select>
+          <a href="/add-country">Caso não encontre o país na lista, clique aqui </a>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+</body>
+
+</html>
