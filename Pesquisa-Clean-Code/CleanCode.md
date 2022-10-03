@@ -18,3 +18,13 @@
 ## L - Liskov Substitution Principle
 ## I - Interface Segregation Principle
 ## D - Dependency Inversion Principle
+
+# Code Smell
+ Característica do código fonte que possivelente indica um problema masi profundo , podendo gerar um bug
+
+ - Code Smells mais comuns :
+    - Bloaters 
+    - Object-Orientation Abusers
+    - Change Preventers
+    - Dispensables
+    - Couplers
