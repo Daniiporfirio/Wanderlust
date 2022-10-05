@@ -55,4 +55,4 @@ Ela comita tanto na  branch Master quanto na branch Develop
 
 ## Referência
 
- - [Alura]([https://sequelize.org/](https://www.alura.com.br/artigos/git-flow-o-que-e-como-quando-utilizar?gclid=Cj0KCQjw1vSZBhDuARIsAKZlijRfj6d5_SPd0EUBwe7CIvI9sd8WC4KXaNW-zF-vMD2MWkiKI6QH8tMaAsRTEALw_wcB))
+ - [Alura]([https://www.alura.com.br/artigos/git-flow-o-que-e-como-quando-utilizar?gclid=Cj0KCQjw1vSZBhDuARIsAKZlijRfj6d5_SPd0EUBwe7CIvI9sd8WC4KXaNW-zF-vMD2MWkiKI6QH8tMaAsRTEALw_wcB])
