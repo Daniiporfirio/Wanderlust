@@ -27,3 +27,26 @@ Branchs:
 - Colaboração
 - Possui uma área de preparação (branch develop)
 - Suporte para correções de emergencia (branch hotfix)
+
+# Resumo
+
+## GitFlow
+
+Modelo de organização de branches para um bom desenvolvimento do projeto
+
+## Branches 
+### Master/Main
+Principal branch. Recebe , em algum momento, as novas funcionalidades que estão sendo desenvolvidas.
+
+### Develop
+Branch onde fica o código do próximo deploy, ou seja , contém funcionalidades que não estão na master mas serão posteriormente adicionadas
+
+### Feature
+São branches utilizadas para o desenvolvimento de funcionalidades específicas. São criadas a partir da branch Develop. Deve ser criado uma branch para cada nova feature a ser trabalhda , com um nome que a identifique.
+
+### Hotfix
+Utilizada para correções imediatas
+
+Exemplo : mudar a border em um arquivo css de 34px para 35px
+
+Ela comita tanto na  branch Master quanto na branch Develop
