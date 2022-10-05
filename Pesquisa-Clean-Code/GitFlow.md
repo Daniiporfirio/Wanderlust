@@ -21,3 +21,9 @@ Branchs:
 - Hotfix -> É uma branch criada a partir da master para realizar correções imediatas encontradas no sistema em produção. Quando concluída, ela é excluída após realizar o merge com as branches Master e Develop. Além disso, quando fechamos um Hotfix Branch, temos que criar uma tag com a nova versão do projeto. Isso porque cada mudança que fazemos na Branch Master precisa de uma tag que a represente.
 - Release -> Uma vez que uma etapa de desenvolvimento esteja concluída, teremos em nossa Branch Develop todas as features e Hotfix mesclados. Então, se quisermos ter todas essas novas funcionalidades na Branch Master, teremos que criar uma Branch de Release. A Branch Release serve como ponte para fazer o merge da Develop para a Master. Ela funciona como ambiente de homologação e é removida após realizar os testes do merge com a Master. Caso seja encontrado algum bug e haja alguma alteração, ela também deve ser sincronizada com a Develop. Por fim, quando fechamos uma Branch Release, temos que criar uma tag com a nova versão de lançamento do software, para que possamos ter um histórico completo do desenvolvimento.
 
+
+## Vantagens:
+- Desenvolvimento Paralelo Simples
+- Colaboração
+- Possui uma área de preparação (branch develop)
+- Suporte para correções de emergencia (branch hotfix)
